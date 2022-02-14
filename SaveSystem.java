@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-//Basic Save System that I made! Shouldn't be too hard to implement into project... hopefully.
+//Basic Save System.
 public class SaveSystem {
     JLabelBuild jLabelBuild = new JLabelBuild();
     File file = new File("UserData.txt");
@@ -35,7 +35,7 @@ public class SaveSystem {
             //NEED NEW LINE AFTER EVERY ENTRY UNLESS IT'S THE LAST ENTRY.
             pw.write("points " + points);
             pw.write("\n");
-            pw.write("upgrade_1_flag " + upgrade_one_flag);
+            pw.write("upgrade_one_flag " + upgrade_one_flag);
             pw.write("\n");
             pw.write("level " + level);
             pw.close();

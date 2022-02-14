@@ -6,6 +6,7 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 
 public class JButtonBuild extends JButton{
+    //Create button instance up here...
     JButton click;
     JButton save;
     JButton load;
@@ -14,6 +15,7 @@ public class JButtonBuild extends JButton{
     Middleware mw = new Middleware();
     
     public JButtonBuild(){
+        //...and then finish the instance in here.
         click = new JButton("Click");    
         save = new JButton("Save");
         load = new JButton("Load");
@@ -21,6 +23,7 @@ public class JButtonBuild extends JButton{
         
         handler = new ButtonHandler();
         
+        //add listeners (see Middleware) to each instance here.
         click.addActionListener(handler);
         save.addActionListener(handler);  
         load.addActionListener(handler);

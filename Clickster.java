@@ -21,6 +21,7 @@ public class Clickster{
         gui.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         gui.setResizable(false);
         gui.setSize(700,550);
+        gui.setLocationRelativeTo(null);
         gui.revalidate();
         gui.repaint();
         gui.setVisible(true);
