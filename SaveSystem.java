@@ -14,12 +14,13 @@ public class SaveSystem {
     JLabelBuild jLabelBuild = new JLabelBuild();
     File file = new File("UserData.txt");
     ClickDB ClickDB = new ClickDB();
-    //This will probably get changed to float since value could eventually get very high.
-    int level = 0;
-    int points = 0;
+    float points = 0;
     boolean upgrade_one_flag = false;
+    
+    float multiplier = 1.0f;
+    
 
-    List<Integer> fileIntValues = new ArrayList<>();
+    List<Float> fileFloatValues = new ArrayList<>();
     List<Boolean> fileBooleanValues = new ArrayList<>();
 
     public static void main(String[] args) {
@@ -27,7 +28,8 @@ public class SaveSystem {
     }
 
     public void saveGame() {
-        int points = ClickDB.getValue();
+        points = ClickDB.getPoints();
+        multiplier = ClickDB.getMultiplier();
         System.out.println("Saving data...");
         file.delete(); //deletes old file, makes new file with updated data after
         try {
@@ -37,7 +39,7 @@ public class SaveSystem {
             pw.write("\n");
             pw.write("upgrade_one_flag " + upgrade_one_flag);
             pw.write("\n");
-            pw.write("level " + level);
+            pw.write("multiplier " + multiplier);
             pw.close();
         } catch (IOException e) {
             e.getMessage();
@@ -46,17 +48,17 @@ public class SaveSystem {
 
     //Uses BufferedReader to load the saved .txt file. 
     //This stores separate data types into separate lists for access later on.
-    //Example as seen below: first int would be in an int list with index 0, first boolean would be in a boolean list with index 0.
+    //Example as seen below: first float would be in an float list with index 0, first boolean would be in a boolean list with index 0.
     public void loadGame() {
         try (BufferedReader BufferedReader = new BufferedReader(new FileReader(file))) {
-            Scanner fileScanInt = new Scanner(file);
+            Scanner fileScanFloat = new Scanner(file);
             Scanner fileScanBoolean = new Scanner(file);
             System.out.println("Loading data...");
-            while (fileScanInt.hasNext()) {
-                if (fileScanInt.hasNextInt()) {
-                    fileIntValues.add(fileScanInt.nextInt());
+            while (fileScanFloat.hasNext()) {
+                if (fileScanFloat.hasNextFloat()) {
+                    fileFloatValues.add(fileScanFloat.nextFloat());
                 } else {
-                    fileScanInt.next();
+                    fileScanFloat.next();
                 }
             while (fileScanBoolean.hasNext()) {
                 if (fileScanBoolean.hasNextBoolean()) {
@@ -70,7 +72,10 @@ public class SaveSystem {
             e.getMessage();
         }
         try{
-        ClickDB.setPoints(fileIntValues.get(0)); //index 0 of int = user's points amount
+        ClickDB.setPoints(fileFloatValues.get(0)); //index 0 of int = user's points amount
+        ClickDB.setMultiplier(fileFloatValues.get(1));
+            System.out.println("Saved Points: " + ClickDB.getPoints());
+            System.out.println("Saved Multiplier: " + ClickDB.getMultiplier());
         }
         catch(Exception e){
             e.getCause();

@@ -1,25 +1,44 @@
 package clickster;
 
 public class ClickDB {
-    static int points;
-    
-    public void setPoints(int sendPoints){
-        this.points = sendPoints;
+
+    static float points;
+    static float multiplier = 1;
+
+    public void setPoints(float sentPoints) {
+        this.points = sentPoints;
     }
-    
-    public int increasePoints(){
-        this.points++;
+
+    public float increasePoints() {
+        this.points = points + (1 * multiplier);
         System.out.println(points);
         return points;
     }
-    
-    public void setPointsZero(){
+
+    public void setPointsZero() {
         this.points = 0;
     }
-    
-    public int getValue(){
-        System.out.println("Sending getValue() test");
+
+    public void removePoints(int changeAmount) {
+        this.points = points - changeAmount;
+    }
+
+    public float getPoints() {
         return points;
     }
-    
+
+    public void changeMultipler(float percentage) {
+        System.out.println("Multiplier before: " + multiplier);
+        this.multiplier = this.multiplier * (1 + percentage);
+        System.out.println("Multiplier after: " + multiplier);
+    }
+
+    public void setMultiplier(float sentMultiplier) {
+        this.multiplier = sentMultiplier;
+    }
+
+    public float getMultiplier() {
+        return this.multiplier;
+    }
+
 }
