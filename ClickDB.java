@@ -4,6 +4,7 @@ public class ClickDB {
 
     static float points;
     static float multiplier = 1;
+    static int imageIndex = 0;
 
     public void setPoints(float sentPoints) {
         this.points = sentPoints;
@@ -39,6 +40,18 @@ public class ClickDB {
 
     public float getMultiplier() {
         return this.multiplier;
+    }
+
+    public int getImageIndex() {
+        return this.imageIndex;
+    }
+
+    public void setImageIndex(int imageIndex) {
+        this.imageIndex += imageIndex;
+    }
+
+    public void setImageIndexZero() {
+        this.imageIndex = 0;
     }
 
 }

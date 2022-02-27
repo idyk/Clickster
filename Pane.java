@@ -33,6 +33,7 @@ public class Pane extends JFrame {
         jPanel = new JPanelBuild();
 
         //Create the tabs here! Make sure that the corresponding panel has everything in it.
+
         tabbedPane.addTab("Click", jPanel.getClickScreenPanel());
         tabbedPane.addTab("Shop", jPanel.getShopScreenPanel());
         tabbedPane.addTab("Settings", jPanel.getSettingsPanel());
@@ -43,7 +44,8 @@ public class Pane extends JFrame {
         tabbedPane.setBackgroundAt(1, Color.YELLOW);
         tabbedPane.setBackgroundAt(2, Color.PINK);
         add(tabbedPane);
-
+        
+        System.out.println("pane");
     }
 
 }

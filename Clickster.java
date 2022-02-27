@@ -1,3 +1,6 @@
+/*CSI 3370 Project - CLICKSTER
+v1.04
+ */
 package clickster;
 
 import javax.swing.JFrame;
@@ -22,7 +25,7 @@ public class Clickster {
         SaveSystem.loadGame();
         jLabelBuild.revalidate();
 
-        //Should make this compatible no matter how it's ran...... assuming every folder is where it should be.
+        //The way this directory is set up should make it universal for each user's system to run correctly...
         String soundDirectory = "file:/" + System.getProperty("user.dir") + "/sound/test.wav";
         URL url = new URL(soundDirectory);
         System.out.println(soundDirectory);
@@ -40,9 +43,8 @@ public class Clickster {
         gui.setResizable(false);
         gui.setSize(700, 550);
         gui.setLocationRelativeTo(null);
-        gui.revalidate();
-        gui.repaint();
         gui.setVisible(true);
+        System.out.println("main");
     }
 
 }
