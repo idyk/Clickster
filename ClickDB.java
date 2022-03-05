@@ -5,6 +5,9 @@ public class ClickDB {
     static float points;
     static float multiplier = 1;
     static int imageIndex = 0;
+    static float totalClicksDone;
+    static boolean milestoneOneFlag;
+    static boolean milestoneTwoFlag;
 
     public void setPoints(float sentPoints) {
         this.points = sentPoints;
@@ -12,8 +15,14 @@ public class ClickDB {
 
     public float increasePoints() {
         this.points = points + (1 * multiplier);
-        System.out.println(points);
+        System.out.println("Points: " + points);
         return points;
+    }
+
+    public float increaseClickTotal() {
+        this.totalClicksDone++;
+        System.out.println("Total clicks done: " + totalClicksDone);
+        return totalClicksDone;
     }
 
     public void setPointsZero() {
@@ -46,12 +55,36 @@ public class ClickDB {
         return this.imageIndex;
     }
 
-    public void setImageIndex(int imageIndex) {
-        this.imageIndex += imageIndex;
+    public void setImageIndex(float imageIndex) {
+        this.imageIndex += (int) imageIndex;
     }
 
     public void setImageIndexZero() {
         this.imageIndex = 0;
+    }
+
+    public void setTotalClicksDone(float totalClicksDone) {
+        this.totalClicksDone = totalClicksDone;
+    }
+
+    public float getTotalClicksDone() {
+        return totalClicksDone;
+    }
+
+    public void setMilestoneOneFlag(boolean milestoneOneFlag) {
+        this.milestoneOneFlag = milestoneOneFlag;
+    }
+
+    public boolean getMilestoneOneFlag() {
+        return milestoneOneFlag;
+    }
+
+    public void setMilestoneTwoFlag(boolean milestoneTwoFlag) {
+        this.milestoneTwoFlag = milestoneTwoFlag;
+    }
+
+    public boolean getMilestoneTwoFlag() {
+        return milestoneTwoFlag;
     }
 
 }

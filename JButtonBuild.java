@@ -3,12 +3,17 @@ package clickster;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.net.URL;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 
 public class JButtonBuild extends JButton {
 
     //Create button instance up here...
+    ImageIcon clickButtonImg;
+    URL url_ClickButtonImg;
+    
+    
     JButton click;
     JButton save;
     JButton load;
@@ -25,11 +30,24 @@ public class JButtonBuild extends JButton {
     Font font = new Font("Comic Sans MS", Font.PLAIN, 20);
 
     public JButtonBuild() {
-        //...and then finish the instance in here.
+        String directory_url_Click_Button = "file:/" + System.getProperty("user.dir") + "/icons/clickbutton.png";
 
-        //Click button...
-        click = new JButton("Click");
-        click.setFont(font);
+        try{
+            url_ClickButtonImg = new URL(directory_url_Click_Button);
+        }
+        catch(Exception exc){
+            exc.getCause();
+        }
+        
+        System.out.println("IMAGE url_ClickButtonImg " + url_ClickButtonImg);
+        
+        clickButtonImg = new ImageIcon(url_ClickButtonImg);
+        
+        //Click button... By only settings the action command, it lets us have a picture as the button!
+        click = new JButton();
+        click.setActionCommand("Click");
+        click.setIcon(clickButtonImg);
+        click.setBorder(null);
         System.out.println("click" + click.getSize());
 
         //Save button...

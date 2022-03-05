@@ -2,11 +2,7 @@ package clickster;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
-import java.awt.GridBagConstraints;
-import java.awt.GridBagLayout;
-import java.awt.GridLayout;
 import javax.swing.BorderFactory;
-import javax.swing.BoxLayout;
 import javax.swing.JPanel;
 
 public class JPanelBuild extends JPanel {
@@ -71,7 +67,7 @@ public class JPanelBuild extends JPanel {
         settingsPanel.add(jButtonBuild.save);
         settingsPanel.add(jButtonBuild.reset);
         settingsPanel.setBackground(Color.PINK);
-        
+
         System.out.println("panel");
 
     }

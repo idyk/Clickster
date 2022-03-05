@@ -8,11 +8,14 @@ import javax.swing.JLabel;
 
 public class ImageList {
 
+    static JLabel imgLabel;
+    
     int imageListIndex;
 
     ClickDB ClickDB = new ClickDB();
-    //New image? First, make a new ImageIcon object for each image or gif. Follow the process through the comments below.
+
     List<ImageIcon> imageList = new ArrayList<>();
+    //New image? First, make a new ImageIcon object for each image or gif. Follow the process through the comments below.
     ImageIcon A_stage1;
     ImageIcon A_stage2;
 
@@ -20,10 +23,7 @@ public class ImageList {
     URL url_A_stage1;
     URL url_A_stage2;
 
-    static JLabel imgLabel;
-
     public ImageList() {
-
         String directory_url_A_stage1 = "file:/" + System.getProperty("user.dir") + "/icons/A_stage1.gif";
         String directory_url_A_stage2 = "file:/" + System.getProperty("user.dir") + "/icons/A_stage1.png";
         try {

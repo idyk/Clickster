@@ -10,7 +10,8 @@ public class Middleware {
     ImageList imageList = new ImageList();
     ClickDB ClickDB = new ClickDB();
     SaveSystem SaveSystem = new SaveSystem();
-
+    Milestone ms = new Milestone();
+    
     public void actionPerformed(ActionEvent e) {
         //When something that has a listener is hit, it will display the source.
         System.out.println("Source: " + e.getSource());
@@ -19,7 +20,12 @@ public class Middleware {
         if (e.getActionCommand().equals("Click")) {
             System.out.println("Clicked");
             ClickDB.increasePoints();
+            ClickDB.increaseClickTotal();
+            ms.checkAllMilestones();
             jLabelBuild.changePointsLabel();
+            //milestone.check1
+            //milestone.check2
+            //etc
         }
 
         if (e.getActionCommand().equals("Save")) {
@@ -32,6 +38,9 @@ public class Middleware {
             ClickDB.setPointsZero();
             ClickDB.setMultiplier(1);
             ClickDB.setImageIndexZero();
+            ClickDB.setTotalClicksDone(0);
+            ClickDB.setMilestoneOneFlag(false);
+            ClickDB.setMilestoneTwoFlag(false);
             SaveSystem.saveGame();
             System.exit(0);
         }

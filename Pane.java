@@ -1,6 +1,5 @@
 package clickster;
 
-import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Container;
 import java.awt.Font;
@@ -33,7 +32,6 @@ public class Pane extends JFrame {
         jPanel = new JPanelBuild();
 
         //Create the tabs here! Make sure that the corresponding panel has everything in it.
-
         tabbedPane.addTab("Click", jPanel.getClickScreenPanel());
         tabbedPane.addTab("Shop", jPanel.getShopScreenPanel());
         tabbedPane.addTab("Settings", jPanel.getSettingsPanel());
