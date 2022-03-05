@@ -2,8 +2,11 @@ package clickster;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.net.URL;
 import javax.swing.BorderFactory;
+import javax.swing.ImageIcon;
 import javax.swing.JPanel;
+import javax.swing.border.EtchedBorder;
 
 public class JPanelBuild extends JPanel {
 
@@ -11,14 +14,22 @@ public class JPanelBuild extends JPanel {
     JLabelBuild jLabelBuild;
     ImageList imageList;
 
+
+
     JPanel clickScreenPanel;
     JPanel pointsPanel;
+    JPanel clicksAmtPanel;
+    JPanel topClicksPanel;
     JPanel clickMenuPanel;
     JPanel imagePanel;
 
     JPanel shopScreenPanel;
 
     JPanel settingsPanel;
+
+    JPanel milestoneOne;
+    JPanel milestoneTwo;
+    JPanel milestonePanel;
 
     public JPanelBuild() {
         imageList = new ImageList();
@@ -27,6 +38,8 @@ public class JPanelBuild extends JPanel {
 
         clickScreenPanel = new JPanel();
         pointsPanel = new JPanel();
+        topClicksPanel = new JPanel();
+        clicksAmtPanel = new JPanel();
         clickMenuPanel = new JPanel();
         imagePanel = new JPanel();
 
@@ -34,6 +47,15 @@ public class JPanelBuild extends JPanel {
         pointsPanel.add(jLabelBuild.getPointsLabel());
         pointsPanel.setBorder(BorderFactory.createLineBorder(Color.BLACK));
         pointsPanel.setBackground(Color.WHITE);
+
+        //Panel with the total clicks done in it.
+        clicksAmtPanel.add(jLabelBuild.getClicksLabel());
+        clicksAmtPanel.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+        clicksAmtPanel.setBackground(Color.WHITE);
+
+        topClicksPanel.add(pointsPanel);
+        topClicksPanel.add(clicksAmtPanel);
+        topClicksPanel.setBackground(Color.white);
 
         //Panel with the CLICK button in it.
         clickMenuPanel.add(jButtonBuild.click);
@@ -46,7 +68,7 @@ public class JPanelBuild extends JPanel {
         //A single panel that combines the points, clickMenu, and image panels. 
         //This is the only way for it to work with the tabbedPane format.
         clickScreenPanel.setLayout(new BorderLayout());
-        clickScreenPanel.add(pointsPanel, BorderLayout.NORTH);
+        clickScreenPanel.add(topClicksPanel, BorderLayout.NORTH);
         clickScreenPanel.add(clickMenuPanel, BorderLayout.SOUTH);
         clickScreenPanel.add(imagePanel, BorderLayout.CENTER);
         clickScreenPanel.setBackground(Color.WHITE);
@@ -68,6 +90,20 @@ public class JPanelBuild extends JPanel {
         settingsPanel.add(jButtonBuild.reset);
         settingsPanel.setBackground(Color.PINK);
 
+        milestonePanel = new JPanel();
+        milestoneOne = new JPanel();
+        milestoneTwo = new JPanel();
+        milestoneOne.add(jLabelBuild.getMilestoneOneStatusLabel());
+        milestoneOne.setBorder(BorderFactory.createEtchedBorder(EtchedBorder.RAISED));
+        milestoneOne.setBackground(Color.WHITE);
+        milestoneTwo.add(jLabelBuild.getMilestoneTwoStatusLabel());
+        milestoneTwo.setBorder(BorderFactory.createEtchedBorder(EtchedBorder.RAISED));
+        milestoneTwo.setBackground(Color.WHITE);
+        milestonePanel.add(jLabelBuild.milestoneTitle);
+        milestonePanel.add(milestoneOne);
+        milestonePanel.add(milestoneTwo);
+        milestonePanel.setBackground(Color.CYAN);
+
         System.out.println("panel");
 
     }
@@ -85,4 +121,7 @@ public class JPanelBuild extends JPanel {
         return settingsPanel;
     }
 
+    public JPanel getMilestonesPanel() {
+        return milestonePanel;
+    }
 }

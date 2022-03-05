@@ -35,12 +35,14 @@ public class Pane extends JFrame {
         tabbedPane.addTab("Click", jPanel.getClickScreenPanel());
         tabbedPane.addTab("Shop", jPanel.getShopScreenPanel());
         tabbedPane.addTab("Settings", jPanel.getSettingsPanel());
+        tabbedPane.addTab("Milestones", jPanel.getMilestonesPanel());
         tabbedPane.setTabPlacement(JTabbedPane.BOTTOM);
         tabbedPane.setOpaque(true);
         tabbedPane.setFont(new Font("Comic Sans MS", Font.BOLD, 20));
         tabbedPane.setBackgroundAt(0, Color.WHITE);
         tabbedPane.setBackgroundAt(1, Color.YELLOW);
         tabbedPane.setBackgroundAt(2, Color.PINK);
+        tabbedPane.setBackgroundAt(3, Color.CYAN);
         add(tabbedPane);
         
         System.out.println("pane");

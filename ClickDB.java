@@ -6,6 +6,7 @@ public class ClickDB {
     static float multiplier = 1;
     static int imageIndex = 0;
     static float totalClicksDone;
+    static float milestoneBonus = 0;
     static boolean milestoneOneFlag;
     static boolean milestoneTwoFlag;
 
@@ -14,7 +15,7 @@ public class ClickDB {
     }
 
     public float increasePoints() {
-        this.points = points + (1 * multiplier);
+        this.points = points + (1 * multiplier) + (milestoneBonus);
         System.out.println("Points: " + points);
         return points;
     }
@@ -49,6 +50,18 @@ public class ClickDB {
 
     public float getMultiplier() {
         return this.multiplier;
+    }
+    
+    public void setMilestoneBonus(float milestoneBonus){
+        this.milestoneBonus += milestoneBonus;
+    }
+    
+    public void setMilestoneBonusZero(){
+        this.milestoneBonus = 0;
+    }
+    
+    public float getMilestoneBonus(){
+        return this.milestoneBonus;
     }
 
     public int getImageIndex() {

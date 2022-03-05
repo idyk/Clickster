@@ -29,6 +29,9 @@ public class Clickster {
         //Check milestones on start up.
         ms.checkAllMilestones();
         
+        //Load milestone statuses.
+        jLabelBuild.changeMilestoneStatusLabels();
+        
         //The way this directory is set up should make it universal for each user's system to run correctly...
         String soundDirectory = "file:/" + System.getProperty("user.dir") + "/sound/test.wav";
         URL url = new URL(soundDirectory);
@@ -45,7 +48,7 @@ public class Clickster {
         gui.setTitle("Clickster 9000");
         gui.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         gui.setResizable(false);
-        gui.setSize(700, 550);
+        gui.setSize(900, 550);
         gui.setLocationRelativeTo(null);
         gui.setVisible(true);
         System.out.println("main");

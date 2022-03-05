@@ -21,6 +21,7 @@ public class SaveSystem {
     float multiplier = 1.0f;
     float totalClicksDone = 0.0f;
     float imageIndex = 0;
+    float milestoneBonus = 0.0f;
 
     boolean milestoneOneFlag = false;
     boolean milestoneTwoFlag = false;
@@ -33,6 +34,7 @@ public class SaveSystem {
         multiplier = ClickDB.getMultiplier();
         imageIndex = ClickDB.getImageIndex();
         totalClicksDone = ClickDB.getTotalClicksDone();
+        milestoneBonus = ClickDB.getMilestoneBonus();
         milestoneOneFlag = ClickDB.getMilestoneOneFlag();
         milestoneTwoFlag = ClickDB.getMilestoneTwoFlag();
         System.out.println("Saving data...");
@@ -47,6 +49,8 @@ public class SaveSystem {
             pw.write("total_clicks_done " + totalClicksDone);
             pw.write("\n");
             pw.write("imageindex " + imageIndex);
+            pw.write("\n");
+            pw.write("milestone_bonus " + milestoneBonus);
             pw.write("\n");
             pw.write("milestone_one " + milestoneOneFlag);
             pw.write("\n");
@@ -92,20 +96,25 @@ public class SaveSystem {
             ClickDB.setMultiplier(fileFloatValues.get(1)); //index 1 of float list = user's multiplier
             ClickDB.setTotalClicksDone(fileFloatValues.get(2)); //index 2 of float list = user's total amount of clicks
             ClickDB.setImageIndex(fileFloatValues.get(3)); //index 3 of float list = user's saved creature image progress
+            ClickDB.setMilestoneBonus(fileFloatValues.get(4)); // index 4 of float list = user's saved Milestone Bonus 
             ClickDB.setMilestoneOneFlag(fileBooleanValues.get(0)); //index 0 of boolean list = user's saved Milestone One progress
+            ClickDB.setMilestoneTwoFlag(fileBooleanValues.get(1)); //index 1 of boolean list = user's saved Milestone Two progress
+            
 
             System.out.println("Saved Points: " + fileFloatValues.get(0));
             System.out.println("Saved Multiplier: " + fileFloatValues.get(1));
             System.out.println("Saved Total Clicks: " + fileFloatValues.get(2));
             System.out.println("Saved Image Index: " + fileFloatValues.get(3));
+            System.out.println("Saved Milestone Bonus: " + fileFloatValues.get(4));
             System.out.println("Saved Milestone 1 Status: " + fileBooleanValues.get(0));
             System.out.println("Saved Milestone 2 Status: " + fileBooleanValues.get(1));
 
         } catch (Exception e) {
             e.getCause();
         }
-
         jLabelBuild.changePointsLabel();
+        jLabelBuild.changeMilestoneStatusLabels();
+        jLabelBuild.changeClicksLabel();
     }
 
 }

@@ -11,7 +11,7 @@ public class Middleware {
     ClickDB ClickDB = new ClickDB();
     SaveSystem SaveSystem = new SaveSystem();
     Milestone ms = new Milestone();
-    
+
     public void actionPerformed(ActionEvent e) {
         //When something that has a listener is hit, it will display the source.
         System.out.println("Source: " + e.getSource());
@@ -23,9 +23,8 @@ public class Middleware {
             ClickDB.increaseClickTotal();
             ms.checkAllMilestones();
             jLabelBuild.changePointsLabel();
-            //milestone.check1
-            //milestone.check2
-            //etc
+            jLabelBuild.changeMilestoneStatusLabels();
+            jLabelBuild.changeClicksLabel();
         }
 
         if (e.getActionCommand().equals("Save")) {
@@ -41,6 +40,7 @@ public class Middleware {
             ClickDB.setTotalClicksDone(0);
             ClickDB.setMilestoneOneFlag(false);
             ClickDB.setMilestoneTwoFlag(false);
+            ClickDB.setMilestoneBonusZero();
             SaveSystem.saveGame();
             System.exit(0);
         }
@@ -58,7 +58,7 @@ public class Middleware {
 
         //Testing at the moment, but will be used for progressing through the stages of the creature.
         if (e.getActionCommand().equals("Testing - change image")) {
-            if (ClickDB.getImageIndex() < imageList.imageList.size()-1) {
+            if (ClickDB.getImageIndex() < imageList.imageList.size() - 1) {
                 System.out.println("Image changed.");
                 try {
                     ClickDB.setImageIndex(1);

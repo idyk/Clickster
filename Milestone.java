@@ -24,7 +24,7 @@ public class Milestone {
     /*MAKE THE MILESTONES. Every milestone must have an entry in ClickDB for set/get methods, along with in SaveSystem for the
     corresponding generated entry on the UserData.txt file.*/
     
-    //Let's say... Milestone One is that the user reaches 50 clicks. "Getting Started!"
+    //Let's say... Milestone One is that the user reaches 50 clicks. "Getting Started!" Gives a reward of +0.5 clicks per click.
     public void checkMilestoneOne() {
         checkClickAmount = ClickDB.getTotalClicksDone();
         milestoneOneFlag = ClickDB.getMilestoneOneFlag();
@@ -32,6 +32,7 @@ public class Milestone {
         if (checkClickAmount >= 50) {
             System.out.println("congrats, you have milestone 1");
             ClickDB.setMilestoneOneFlag(true);
+            ClickDB.setMilestoneBonus(0.5f);
         }
     }
 
@@ -43,6 +44,7 @@ public class Milestone {
         if (checkClickAmount >= 100 && milestoneTwoFlag == false) {
             System.out.println("congrats, you have milestone 2");
             ClickDB.setMilestoneTwoFlag(true);
+            ClickDB.setMilestoneBonus(0.5f);
         }
     }
 
