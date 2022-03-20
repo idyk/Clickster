@@ -24,8 +24,8 @@ public class ImageList {
     URL url_A_stage2;
 
     public ImageList() {
-        String directory_url_A_stage1 = "file:/" + System.getProperty("user.dir") + "/icons/A_stage1.gif";
-        String directory_url_A_stage2 = "file:/" + System.getProperty("user.dir") + "/icons/A_stage1.png";
+        String directory_url_A_stage1 = "file:" + System.getProperty("user.dir") + "/icons/A_stage1.gif";
+        String directory_url_A_stage2 = "file:" + System.getProperty("user.dir") + "/icons/A_stage1.png";
         try {
             //Make the URL.
             url_A_stage1 = new URL(directory_url_A_stage1);

@@ -17,10 +17,15 @@ public class Clickster {
     /**
      * @param args the command line arguments
      */
+    
+  
+    
+    
     public static void main(String[] args) throws UnsupportedAudioFileException, IOException, MalformedURLException, LineUnavailableException {
         SaveSystem SaveSystem = new SaveSystem();
         JLabelBuild jLabelBuild = new JLabelBuild();
         Milestone ms = new Milestone();
+        Audio audio = new Audio();
 
         //Loads save upon start up.
         SaveSystem.loadGame();
@@ -32,16 +37,7 @@ public class Clickster {
         //Load milestone statuses.
         jLabelBuild.changeMilestoneStatusLabels();
         
-        //The way this directory is set up should make it universal for each user's system to run correctly...
-        String soundDirectory = "file:/" + System.getProperty("user.dir") + "/sound/test.wav";
-        URL url = new URL(soundDirectory);
-        System.out.println(soundDirectory);
-
-        //Plays starting track upon start up.
-        Clip audio = AudioSystem.getClip();
-        AudioInputStream input = AudioSystem.getAudioInputStream(url);
-        audio.open(input);
-        audio.loop(Clip.LOOP_CONTINUOUSLY);
+        audio.play("file:/" + System.getProperty("user.dir") + "/sound/test.wav");
 
         Pane gui = new Pane();
         gui.storeRef(gui);

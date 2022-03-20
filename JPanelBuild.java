@@ -88,6 +88,8 @@ public class JPanelBuild extends JPanel {
         settingsPanel.add(jLabelBuild.settingsTitle);
         settingsPanel.add(jButtonBuild.save);
         settingsPanel.add(jButtonBuild.reset);
+        settingsPanel.add(jButtonBuild.mute);
+        settingsPanel.add(jButtonBuild.unmute);
         settingsPanel.setBackground(Color.PINK);
 
         milestonePanel = new JPanel();

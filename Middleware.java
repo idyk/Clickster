@@ -18,6 +18,7 @@ public class Middleware {
 
         //Based on name of button that is hit - it goes into the .equals("...") section.
         if (e.getActionCommand().equals("Click")) {
+            Audio audio = new Audio();
             System.out.println("Clicked");
             ClickDB.increasePoints();
             ClickDB.increaseClickTotal();
@@ -25,6 +26,8 @@ public class Middleware {
             jLabelBuild.changePointsLabel();
             jLabelBuild.changeMilestoneStatusLabels();
             jLabelBuild.changeClicksLabel();
+            audio.playOnce("file:/" + System.getProperty("user.dir") + "/sound/click.wav");
+            
         }
 
         if (e.getActionCommand().equals("Save")) {
@@ -69,12 +72,27 @@ public class Middleware {
             }
         }
 
-        if (e.getActionCommand().equals("Upgrade 3")) {
-
+        if (e.getActionCommand().equals("Mute")) {
+            System.out.println("mute");
+            Audio audio = new Audio();
+            try{
+            audio.mute();
+            }
+            catch(Exception ex){
+                System.out.println(ex);
+            }
+            
         }
 
-        if (e.getActionCommand().equals("Upgrade 4")) {
-
+        if (e.getActionCommand().equals("Unmute") ) {
+            System.out.println("unmute");
+            Audio audio = new Audio();
+            try{
+                audio.unmute();
+            }
+            catch(Exception ex){
+                System.out.println(ex);
+            }
         }
 
         if (e.getActionCommand().equals("Upgrade 5")) {

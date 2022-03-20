@@ -18,19 +18,21 @@ public class JButtonBuild extends JButton {
     JButton save;
     JButton load;
     JButton reset;
+    JButton mute;
+    JButton unmute;
     JButton upgrade_one;
     JButton upgrade_two;
     JButton upgrade_three;
     JButton upgrade_four;
     JButton upgrade_five;
-
+    
     ButtonHandler handler;
     Middleware mw = new Middleware();
 
     Font font = new Font("Comic Sans MS", Font.PLAIN, 20);
 
     public JButtonBuild() {
-        String directory_url_Click_Button = "file:/" + System.getProperty("user.dir") + "/icons/clickbutton.png";
+        String directory_url_Click_Button = "file:" + System.getProperty("user.dir") + "/icons/clickbutton.png";
 
         try{
             url_ClickButtonImg = new URL(directory_url_Click_Button);
@@ -61,6 +63,12 @@ public class JButtonBuild extends JButton {
         //Reset button...
         reset = new JButton("Reset");
         reset.setFont(font);
+                
+        mute = new JButton("Mute");
+        mute.setFont(font);
+        
+        unmute = new JButton("Unmute");
+        unmute.setFont(font);
 
         //Upgrade buttons... 
         upgrade_one = new JButton("50 CLICKS - Upgrade click power by 1%");
@@ -69,14 +77,15 @@ public class JButtonBuild extends JButton {
         upgrade_two = new JButton("Testing - change image");
         upgrade_two.setFont(font);
 
-        upgrade_three = new JButton("??? CLICKS - ????????????????????");
+        upgrade_three = new JButton("....");
         upgrade_three.setFont(font);
 
-        upgrade_four = new JButton("??? CLICKS - ????????????????????");
+        upgrade_four = new JButton("....");
         upgrade_four.setFont(font);
 
         upgrade_five = new JButton("??? CLICKS - ????????????????????");
         upgrade_five.setFont(font);
+
 
         handler = new ButtonHandler();
 
@@ -85,6 +94,8 @@ public class JButtonBuild extends JButton {
         save.addActionListener(handler);
         load.addActionListener(handler);
         reset.addActionListener(handler);
+        mute.addActionListener(handler);
+        unmute.addActionListener(handler);
         upgrade_one.addActionListener(handler);
         upgrade_two.addActionListener(handler);
         upgrade_three.addActionListener(handler);
