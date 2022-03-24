@@ -1,0 +1,7 @@
+points 0.0
+multiplier 1.0
+total_clicks_done 0.0
+imageindex 0.0
+milestone_bonus 0.0
+milestone_one false
+milestone_two false
