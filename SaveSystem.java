@@ -25,6 +25,9 @@ public class SaveSystem {
 
     boolean milestoneOneFlag = false;
     boolean milestoneTwoFlag = false;
+    boolean milestoneThreeFlag = false;
+    boolean milestoneFourFlag = false;
+    boolean milestoneFiveFlag = false;
 
     List<Float> fileFloatValues = new ArrayList<>();
     List<Boolean> fileBooleanValues = new ArrayList<>();
@@ -37,6 +40,10 @@ public class SaveSystem {
         milestoneBonus = ClickDB.getMilestoneBonus();
         milestoneOneFlag = ClickDB.getMilestoneOneFlag();
         milestoneTwoFlag = ClickDB.getMilestoneTwoFlag();
+        milestoneThreeFlag = ClickDB.getMilestoneThreeFlag();
+        milestoneFourFlag = ClickDB.getMilestoneFourFlag();
+        milestoneFiveFlag = ClickDB.getMilestoneFiveFlag();
+
         System.out.println("Saving data...");
         file.delete(); //deletes old file, makes new file with updated data after
         try {
@@ -55,6 +62,12 @@ public class SaveSystem {
             pw.write("milestone_one " + milestoneOneFlag);
             pw.write("\n");
             pw.write("milestone_two " + milestoneTwoFlag);
+            pw.write("\n");
+            pw.write("milestone_three " + milestoneThreeFlag);
+            pw.write("\n");
+            pw.write("milestone_four " + milestoneFourFlag);
+            pw.write("\n");
+            pw.write("milestone_five " + milestoneFiveFlag);
             pw.close();
         } catch (IOException e) {
             e.getMessage();
@@ -99,7 +112,9 @@ public class SaveSystem {
             ClickDB.setMilestoneBonus(fileFloatValues.get(4)); // index 4 of float list = user's saved Milestone Bonus 
             ClickDB.setMilestoneOneFlag(fileBooleanValues.get(0)); //index 0 of boolean list = user's saved Milestone One progress
             ClickDB.setMilestoneTwoFlag(fileBooleanValues.get(1)); //index 1 of boolean list = user's saved Milestone Two progress
-            
+            ClickDB.setMilestoneThreeFlag(fileBooleanValues.get(2)); //index 2 of boolean list = user's saved Milestone Three progress
+            ClickDB.setMilestoneFourFlag(fileBooleanValues.get(3)); //index 3 of boolean list = user's saved Milestone Four progress
+            ClickDB.setMilestoneFiveFlag(fileBooleanValues.get(4)); //index 4 of boolean list = user's saved Milestone Five progress
 
             System.out.println("Saved Points: " + fileFloatValues.get(0));
             System.out.println("Saved Multiplier: " + fileFloatValues.get(1));
@@ -108,6 +123,9 @@ public class SaveSystem {
             System.out.println("Saved Milestone Bonus: " + fileFloatValues.get(4));
             System.out.println("Saved Milestone 1 Status: " + fileBooleanValues.get(0));
             System.out.println("Saved Milestone 2 Status: " + fileBooleanValues.get(1));
+            System.out.println("Saved Milestone 3 Status: " + fileBooleanValues.get(2));
+            System.out.println("Saved Milestone 4 Status: " + fileBooleanValues.get(3));
+            System.out.println("Saved Milestone 5 Status: " + fileBooleanValues.get(4));
 
         } catch (Exception e) {
             e.getCause();
@@ -115,6 +133,7 @@ public class SaveSystem {
         jLabelBuild.changePointsLabel();
         jLabelBuild.changeMilestoneStatusLabels();
         jLabelBuild.changeClicksLabel();
+        jLabelBuild.changeMultiplierLabel();
     }
 
 }

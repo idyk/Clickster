@@ -12,12 +12,14 @@ public class JButtonBuild extends JButton {
     //Create button instance up here...
     ImageIcon clickButtonImg;
     URL url_ClickButtonImg;
-    
-    
+
     JButton click;
     JButton save;
     JButton load;
+    JButton pause;
     JButton reset;
+    JButton mute;
+    JButton unmute;
     JButton upgrade_one;
     JButton upgrade_two;
     JButton upgrade_three;
@@ -28,21 +30,21 @@ public class JButtonBuild extends JButton {
     Middleware mw = new Middleware();
 
     Font font = new Font("Comic Sans MS", Font.PLAIN, 20);
-
+    Font shopFont = new Font("Comic Sans MS", Font.PLAIN, 14);
+    
     public JButtonBuild() {
-        String directory_url_Click_Button = "file:/" + System.getProperty("user.dir") + "/icons/clickbutton.png";
+        String directory_url_Click_Button = "file:" + System.getProperty("user.dir") + "/icons/clickbutton.png";
 
-        try{
+        try {
             url_ClickButtonImg = new URL(directory_url_Click_Button);
-        }
-        catch(Exception exc){
+        } catch (Exception exc) {
             exc.getCause();
         }
-        
+
         System.out.println("IMAGE url_ClickButtonImg " + url_ClickButtonImg);
-        
+
         clickButtonImg = new ImageIcon(url_ClickButtonImg);
-        
+
         //Click button... By only settings the action command, it lets us have a picture as the button!
         click = new JButton();
         click.setActionCommand("Click");
@@ -62,21 +64,24 @@ public class JButtonBuild extends JButton {
         reset = new JButton("Reset");
         reset.setFont(font);
 
+        mute = new JButton("Mute");
+        mute.setFont(font);
+
+        unmute = new JButton("Unmute");
+        unmute.setFont(font);
+
         //Upgrade buttons... 
-        upgrade_one = new JButton("50 CLICKS - Upgrade click power by 1%");
-        upgrade_one.setFont(font);
+        upgrade_one = new JButton("Poke - 50 points");
+        upgrade_one.setFont(shopFont);
 
-        upgrade_two = new JButton("Testing - change image");
-        upgrade_two.setFont(font);
+        upgrade_two = new JButton("Progress the lifecycle... - 600 points");
+        upgrade_two.setFont(shopFont);
 
-        upgrade_three = new JButton("??? CLICKS - ????????????????????");
-        upgrade_three.setFont(font);
+        upgrade_three = new JButton("Farm - 500 points");
+        upgrade_three.setFont(shopFont);
 
-        upgrade_four = new JButton("??? CLICKS - ????????????????????");
-        upgrade_four.setFont(font);
-
-        upgrade_five = new JButton("??? CLICKS - ????????????????????");
-        upgrade_five.setFont(font);
+        upgrade_four = new JButton("Extra Food - 2000 points");
+        upgrade_four.setFont(shopFont);
 
         handler = new ButtonHandler();
 
@@ -85,12 +90,13 @@ public class JButtonBuild extends JButton {
         save.addActionListener(handler);
         load.addActionListener(handler);
         reset.addActionListener(handler);
+        mute.addActionListener(handler);
+        unmute.addActionListener(handler);
         upgrade_one.addActionListener(handler);
         upgrade_two.addActionListener(handler);
         upgrade_three.addActionListener(handler);
         upgrade_four.addActionListener(handler);
-        upgrade_five.addActionListener(handler);
-        
+
         System.out.println("button");
     }
 
