@@ -6,6 +6,8 @@ public class Milestone {
 
     Audio audio = new Audio();
 
+    ImageList imageList = new ImageList();
+
     //Initialize milestones!
     static boolean milestoneOneFlag = false;
     static boolean milestoneTwoFlag = false;
@@ -101,7 +103,7 @@ public class Milestone {
 
     //Let's say... Milestone Five is that the user reaches 9000 clicks and reaches the Rooster. "Clickster 9000"
     public void checkMilestoneFive() {
-        ImageList imageList = new ImageList();
+
         checkClickAmount = ClickDB.getTotalClicksDone();
         milestoneFiveFlag = ClickDB.getMilestoneFiveFlag();
         System.out.println("Checking Milestone 5 with click amount of " + checkClickAmount);
