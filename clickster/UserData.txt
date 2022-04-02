@@ -5,3 +5,6 @@ imageindex 0.0
 milestone_bonus 0.0
 milestone_one false
 milestone_two false
+milestone_three false
+milestone_four false
+milestone_five false

@@ -9,6 +9,10 @@ public class ClickDB {
     static float milestoneBonus = 0;
     static boolean milestoneOneFlag;
     static boolean milestoneTwoFlag;
+    static boolean milestoneThreeFlag;
+    static boolean milestoneFourFlag;
+    static boolean milestoneFiveFlag;
+    static boolean muteFlag = false;
 
     public void setPoints(float sentPoints) {
         this.points = sentPoints;
@@ -51,16 +55,16 @@ public class ClickDB {
     public float getMultiplier() {
         return this.multiplier;
     }
-    
-    public void setMilestoneBonus(float milestoneBonus){
+
+    public void setMilestoneBonus(float milestoneBonus) {
         this.milestoneBonus += milestoneBonus;
     }
-    
-    public void setMilestoneBonusZero(){
+
+    public void setMilestoneBonusZero() {
         this.milestoneBonus = 0;
     }
-    
-    public float getMilestoneBonus(){
+
+    public float getMilestoneBonus() {
         return this.milestoneBonus;
     }
 
@@ -98,6 +102,38 @@ public class ClickDB {
 
     public boolean getMilestoneTwoFlag() {
         return milestoneTwoFlag;
+    }
+
+    public void setMilestoneThreeFlag(boolean milestoneThreeFlag) {
+        this.milestoneThreeFlag = milestoneThreeFlag;
+    }
+
+    public boolean getMilestoneThreeFlag() {
+        return milestoneThreeFlag;
+    }
+
+    public void setMilestoneFourFlag(boolean milestoneFourFlag) {
+        this.milestoneFourFlag = milestoneFourFlag;
+    }
+
+    public boolean getMilestoneFourFlag() {
+        return milestoneFourFlag;
+    }
+
+    public void setMilestoneFiveFlag(boolean milestoneFiveFlag) {
+        this.milestoneFiveFlag = milestoneFiveFlag;
+    }
+
+    public boolean getMilestoneFiveFlag() {
+        return milestoneFiveFlag;
+    }
+
+    public void setMuteFlag(boolean muteFlag) {
+        this.muteFlag = muteFlag;
+    }
+
+    public boolean getMuteFlag() {
+        return muteFlag;
     }
 
 }

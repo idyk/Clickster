@@ -40,7 +40,7 @@ public class Pane extends JFrame {
         tabbedPane.setOpaque(true);
         tabbedPane.setFont(new Font("Comic Sans MS", Font.BOLD, 20));
         tabbedPane.setBackgroundAt(0, Color.WHITE);
-        tabbedPane.setBackgroundAt(1, Color.YELLOW);
+        tabbedPane.setBackgroundAt(1, new Color(235, 86, 75));
         tabbedPane.setBackgroundAt(2, Color.PINK);
         tabbedPane.setBackgroundAt(3, Color.CYAN);
         add(tabbedPane);
