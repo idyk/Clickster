@@ -35,8 +35,12 @@ public class Middleware {
         }
 
         if (e.getActionCommand().equals("Save")) {
+            if (ClickDB.getMuteFlag() == false) {
+
+                audio.playOnce("file:/" + System.getProperty("user.dir") + "/sound/save.wav");
+
+            }
             System.out.println("Saved");
-            audio.playOnce("file:/" + System.getProperty("user.dir") + "/sound/save.wav");
             SaveSystem.saveGame();
         }
 
@@ -94,7 +98,7 @@ public class Middleware {
                 }
             } else if (ClickDB.getImageIndex() == imageList.imageList.size() - 1) {
                 System.out.println("max index");
-                
+
             }
         }
 
