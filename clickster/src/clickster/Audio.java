@@ -43,6 +43,7 @@ public class Audio {
     public void unmute() {
         try {
             audio.start();
+            audio.loop(Clip.LOOP_CONTINUOUSLY);
         } catch (Exception ex) {
             System.out.println(ex);
         }
