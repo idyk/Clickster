@@ -6,7 +6,6 @@ import java.awt.*;
 import javax.swing.BorderFactory;
 import javax.swing.BoxLayout;
 import javax.swing.JPanel;
-import javax.swing.SwingConstants;
 import javax.swing.border.EtchedBorder;
 
 public class JPanelBuild extends JPanel {

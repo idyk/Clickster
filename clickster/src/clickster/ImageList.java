@@ -69,21 +69,21 @@ public class ImageList {
         String directory_url_plate = "file:" + System.getProperty("user.dir") + "/icons/plate.png";
         String directory_url_egg = "file:" + System.getProperty("user.dir") + "/icons/egg.png";
 
-        String directory_url_egg_chick = "file:" + System.getProperty("user.dir") + "/icons/egg_chick.png";
-        String directory_url_egg_cracked_chick = "file:" + System.getProperty("user.dir") + "/icons/egg_cracked_chick.png";
-        String directory_url_animal_chick = "file:" + System.getProperty("user.dir") + "/icons/animal_chick.png";
-        String directory_url_egg_cow = "file:" + System.getProperty("user.dir") + "/icons/egg_cow.png";
-        String directory_url_egg_cracked_cow = "file:" + System.getProperty("user.dir") + "/icons/egg_cracked_cow.png";
-        String directory_url_animal_cow = "file:" + System.getProperty("user.dir") + "/icons/animal_cow.png";
-        String directory_url_egg_horse = "file:" + System.getProperty("user.dir") + "/icons/egg_horse.png";
-        String directory_url_egg_cracked_horse = "file:" + System.getProperty("user.dir") + "/icons/egg_cracked_horse.png";
-        String directory_url_animal_horse = "file:" + System.getProperty("user.dir") + "/icons/animal_horse.png";
-        String directory_url_egg_pig = "file:" + System.getProperty("user.dir") + "/icons/egg_pig.png";
-        String directory_url_egg_cracked_pig = "file:" + System.getProperty("user.dir") + "/icons/egg_cracked_pig.png";
-        String directory_url_animal_pig = "file:" + System.getProperty("user.dir") + "/icons/animal_pig.png";
-        String directory_url_egg_rooster = "file:" + System.getProperty("user.dir") + "/icons/egg_rooster.png";
-        String directory_url_egg_cracked_rooster = "file:" + System.getProperty("user.dir") + "/icons/egg_cracked_rooster.png";
-        String directory_url_animal_rooster = "file:" + System.getProperty("user.dir") + "/icons/animal_rooster.png";
+        String directory_url_egg_chick = "file:" + System.getProperty("user.dir") + "/icons/egg_chick.gif";
+        String directory_url_egg_cracked_chick = "file:" + System.getProperty("user.dir") + "/icons/egg_cracked_chick.gif";
+        String directory_url_animal_chick = "file:" + System.getProperty("user.dir") + "/icons/animal_chick.gif";
+        String directory_url_egg_cow = "file:" + System.getProperty("user.dir") + "/icons/egg_cow.gif";
+        String directory_url_egg_cracked_cow = "file:" + System.getProperty("user.dir") + "/icons/egg_cracked_cow.gif";
+        String directory_url_animal_cow = "file:" + System.getProperty("user.dir") + "/icons/animal_cow.gif";
+        String directory_url_egg_horse = "file:" + System.getProperty("user.dir") + "/icons/egg_horse.gif";
+        String directory_url_egg_cracked_horse = "file:" + System.getProperty("user.dir") + "/icons/egg_cracked_horse.gif";
+        String directory_url_animal_horse = "file:" + System.getProperty("user.dir") + "/icons/animal_horse.gif";
+        String directory_url_egg_pig = "file:" + System.getProperty("user.dir") + "/icons/egg_pig.gif";
+        String directory_url_egg_cracked_pig = "file:" + System.getProperty("user.dir") + "/icons/egg_cracked_pig.gif";
+        String directory_url_animal_pig = "file:" + System.getProperty("user.dir") + "/icons/animal_pig.gif";
+        String directory_url_egg_rooster = "file:" + System.getProperty("user.dir") + "/icons/egg_rooster.gif";
+        String directory_url_egg_cracked_rooster = "file:" + System.getProperty("user.dir") + "/icons/egg_cracked_rooster.gif";
+        String directory_url_animal_rooster = "file:" + System.getProperty("user.dir") + "/icons/animal_rooster.gif";
 
         try {
             //Make the URL.

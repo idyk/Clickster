@@ -87,8 +87,15 @@ public class Middleware {
         //Used for progressing through the stages of the creature.
         if (e.getActionCommand().equals("Progress the lifecycle... - 600 points")) {
             System.out.println("ClickDB image index: " + ClickDB.getImageIndex());
+            ms.checkAllMilestones();
+            jLabelBuild.changePointsLabel();
+            jLabelBuild.changeMilestoneStatusLabels();
+            jLabelBuild.changeClicksLabel();
             if (ClickDB.getImageIndex() < imageList.imageList.size() - 1 && ClickDB.getPoints() >= 600) {
                 ClickDB.removePoints(600);
+                jLabelBuild.changePointsLabel();
+                jLabelBuild.changeMultiplierLabel();
+
                 System.out.println("Image changed.");
                 try {
                     ClickDB.setImageIndex(1);
@@ -106,7 +113,7 @@ public class Middleware {
             if (ClickDB.getPoints() >= 500) {
                 System.out.println("Click power increased by 12%!");
                 ClickDB.changeMultipler(.12f);
-                ClickDB.removePoints(300);
+                ClickDB.removePoints(500);
                 jLabelBuild.changePointsLabel();
                 jLabelBuild.changeMultiplierLabel();
             }
@@ -116,7 +123,7 @@ public class Middleware {
             if (ClickDB.getPoints() >= 2000) {
                 System.out.println("Click power increased by 45%!");
                 ClickDB.changeMultipler(.45f);
-                ClickDB.removePoints(500);
+                ClickDB.removePoints(2000);
                 jLabelBuild.changePointsLabel();
                 jLabelBuild.changeMultiplierLabel();
             }

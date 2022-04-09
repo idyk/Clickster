@@ -1,16 +1,13 @@
 /*CSI 3370 Project - CLICKSTER
-v1.04
+Final Build!
  */
 package clickster;
 
-import java.awt.Image;
-import java.awt.event.ActionEvent;
 import javax.swing.JFrame;
 import java.io.IOException;
 import java.net.*;
 import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.UnsupportedAudioFileException;
-import javax.swing.ImageIcon;
 
 public class Clickster {
     
@@ -20,6 +17,8 @@ public class Clickster {
         Milestone ms = new Milestone();
         Audio audio = new Audio();
         ImageList imageList = new ImageList();
+        ClickDB ClickDB = new ClickDB();
+        
         //Loads save upon start up.
         SaveSystem.loadGame();
         jLabelBuild.revalidate();
@@ -30,7 +29,12 @@ public class Clickster {
         //Load milestone statuses.
         jLabelBuild.changeMilestoneStatusLabels();
         
+        if(ClickDB.getMilestoneFiveFlag() == false){
         audio.play("file:/" + System.getProperty("user.dir") + "/sound/test.wav");
+        }
+        else{
+            audio.play("file:/" + System.getProperty("user.dir") + "/sound/testWin.wav");
+        }
 
         Pane gui = new Pane();
         gui.storeRef(gui);

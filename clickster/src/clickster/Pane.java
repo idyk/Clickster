@@ -45,6 +45,7 @@ public class Pane extends JFrame {
         tabbedPane.setBackgroundAt(3, Color.CYAN);
         add(tabbedPane);
         
+
         System.out.println("pane");
     }
 

@@ -7,6 +7,8 @@ public class Milestone {
     Audio audio = new Audio();
 
     ImageList imageList = new ImageList();
+    
+
 
     //Initialize milestones!
     static boolean milestoneOneFlag = false;
@@ -111,6 +113,8 @@ public class Milestone {
             System.out.println("congrats, you have milestone 5");
             if (ClickDB.getMuteFlag() == false) {
                 audio.playOnce("file:/" + System.getProperty("user.dir") + "/sound/victory.wav");
+                audio.mute();
+                audio.play("file:/" + System.getProperty("user.dir") + "/sound/testWin.wav");
             }
             ClickDB.setMilestoneFiveFlag(true);
             ClickDB.setMilestoneBonus(0.5f);
