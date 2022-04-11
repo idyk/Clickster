@@ -109,6 +109,7 @@ public class Milestone {
         checkClickAmount = ClickDB.getTotalClicksDone();
         milestoneFiveFlag = ClickDB.getMilestoneFiveFlag();
         System.out.println("Checking Milestone 5 with click amount of " + checkClickAmount);
+        System.out.println("getImageIndex: " + ClickDB.getImageIndex() + " imagelist size: " + imageList.imageList.size());
         if (checkClickAmount >= 9000 && ClickDB.getImageIndex() == imageList.imageList.size() - 1) {
             System.out.println("congrats, you have milestone 5");
             if (ClickDB.getMuteFlag() == false) {

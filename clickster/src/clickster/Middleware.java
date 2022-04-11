@@ -86,15 +86,9 @@ public class Middleware {
 
         //Used for progressing through the stages of the creature.
         if (e.getActionCommand().equals("Progress the lifecycle... - 600 points")) {
-            System.out.println("ClickDB image index: " + ClickDB.getImageIndex());
-            ms.checkAllMilestones();
-            jLabelBuild.changePointsLabel();
-            jLabelBuild.changeMilestoneStatusLabels();
-            jLabelBuild.changeClicksLabel();
+            System.out.println("ClickDB image index before lifecycle progression: " + ClickDB.getImageIndex());
             if (ClickDB.getImageIndex() < imageList.imageList.size() - 1 && ClickDB.getPoints() >= 600) {
                 ClickDB.removePoints(600);
-                jLabelBuild.changePointsLabel();
-                jLabelBuild.changeMultiplierLabel();
 
                 System.out.println("Image changed.");
                 try {
@@ -105,8 +99,12 @@ public class Middleware {
                 }
             } else if (ClickDB.getImageIndex() == imageList.imageList.size() - 1) {
                 System.out.println("max index");
-
             }
+            System.out.println("ClickDB image index after lifecycle progression: " + ClickDB.getImageIndex());
+            ms.checkAllMilestones();
+            jLabelBuild.changePointsLabel();
+            jLabelBuild.changeMilestoneStatusLabels();
+            jLabelBuild.changeClicksLabel();
         }
 
         if (e.getActionCommand().equals("Farm - 500 points")) {
